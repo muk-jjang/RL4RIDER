@@ -1,207 +1,231 @@
-<div align="center">
+# RL4RIDER
 
+### clone from https://github.com/ai4co/rl4co
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/ai4co/assets/main/svg/rl4co_animated_full.svg" alt="AI4CO Logo" style="width: 40%; height: auto;">
-</div>
+## Commit/Issue/PR Examples
 
-</br></br>
+### Commit
 
+```
+🔥 [add] #1 add html cleansing code
+🔥 [add] #4 data preprocessing code
+🐛 [fix] #12 fix bugs
+🛠️ [git] #12 resolve merge conflict
+🛠️ [git] #12 .gitignore
+✨ [feat] #19 implement main logics (incomplete)
+📝 [docs] #24 update git files
+📝 [docs] #31 add TODO
+🎨 [style] #31 fix typo
+📌 [dev] #31 update dependencies
+🛠️ [git] #2 merge
+```
 
-<a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
-<a href="https://pytorchlightning.ai/"><img alt="Lightning" src="https://img.shields.io/badge/-Lightning-792ee5?logo=pytorchlightning&logoColor=white"></a>
-<a href="https://github.com/pytorch/rl"><img alt="base: TorchRL" src="https://img.shields.io/badge/base-TorchRL-red">
-<a href="https://hydra.cc/"><img alt="config: Hydra" src="https://img.shields.io/badge/config-Hydra-89b8cd"></a> [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Slack](https://img.shields.io/badge/slack-chat-611f69.svg?logo=slack)](https://join.slack.com/t/rl4co/shared_invite/zt-1ytz2c1v4-0IkQ8NQH4TRXIX8PrRmDhQ)
-[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT) <a href="https://colab.research.google.com/github/ai4co/rl4co/blob/main/examples/1-quickstart.ipynb"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> [![PyPI](https://img.shields.io/pypi/v/rl4co?logo=pypi)](https://pypi.org/project/rl4co)
-[![Test](https://github.com/ai4co/rl4co/actions/workflows/tests.yml/badge.svg)](https://github.com/ai4co/rl4co/actions/workflows/tests.yml)
+### Issue
 
-[**Documentation**](https://rl4co.readthedocs.io/) |  [**Getting Started**](#getting-started) | [**Usage**](#usage) | [**Contributing**](#contributing) | [**Paper**](https://arxiv.org/abs/2306.17100) | [**Join Us**](#join-us)
+```
+[✨/feature/mindong] implement login feature
+[🌱/develop/jeau] v0.1.12
+[🚑/hotfix/joon] fix login Bug
+```
 
-</div>
+### Branch & PR
 
----
+```
+feature#1/mindong/login
+hotfix#2/jeau/fix-social-login
+develop#3/joon/v0.1.12
+chore#4/mindong/update-readme
+chore#5/joon/style-change
+add#1/jeau/add-skeleton-code
+```
 
-RL4CO has been accepted as an oral presentation at the [NeurIPS 2023 GLFrontiers Workshop](https://glfrontiers.github.io/)! 🎉
+## Programming Rule
 
----
+- **tips**
 
+  - cmd+P, ctrl+P : 파일 검색
+    - 아무렇게나 쳐도 파일 좀 잘 찾아줌, 파일 이름 지을 때 이 기능 사용할 것을 염두에 두고 지을 것
+    - \# 누르면 symbol 검색 가능
+  - hover, cmd+Click, ctrl+Click으로 파일 넘나들며 코딩하는 경우가 잦음, docstring이나 자세하게 작성할 수록 편함.
+  - symbol 선택 후 shift+cmd+F / shift+ctrl+F로 reference들 확인하면 편함
 
-An extensive Reinforcement Learning (RL) for Combinatorial Optimization (CO) benchmark. Our goal is to provide a unified framework for RL-based CO algorithms, and to facilitate reproducible research in this field, decoupling the science from the engineering.
+- **import**
 
+  - `@/`로 absolute import 가능 (pull해줘야 함)
+  - Ex. `import * as S from '@/screens/styles';`
 
-RL4CO is built upon:
-- [TorchRL](https://github.com/pytorch/rl): official PyTorch framework for RL algorithms and vectorized environments on GPUs
-- [TensorDict](https://github.com/pytorch-labs/tensordict): a library to easily handle heterogeneous data such as states, actions and rewards
-- [PyTorch Lightning](https://github.com/Lightning-AI/lightning): a lightweight PyTorch wrapper for high-performance AI research
-- [Hydra](https://github.com/facebookresearch/hydra): a framework for elegantly configuring complex applications
+- **extensions**
 
-![RL4CO Overview](https://github.com/ai4co/rl4co/assets/34462374/4d9a670f-ab7c-4fc8-9135-82d17cb6d0ee)
+  - Auto Import - ES6, TS, JSX, TSX (중)
+    - 자동으로 import 해줌
+  - Auto Rename Tag (하)
+    - 아주 편함...
+  - Better Comments (필수)
+    - 프로젝트 내에서 코멘트 표시할 때, ! ? \* 등으로 표시하는 rule 정하면 협업 편할 듯
+  - Bracket Pair Color DLW (중)
+    - 없으면 웹개발 불가능
+  - Github Copilot (상)
+    - 웹개발 속도 \* 10
+  - Path Intellisense (중)
+    - import할 때, 경로 자동완성
+  - Prettier - Code formatter (필수)
+    - 코드 포맷팅, 이걸로 통일할 것임
+  - vscode-pets (하)
+    - 귀여움
 
+## Commit Message Convention
 
-We provide several utilities and modularization. For autoregressive policies, we modularize reusable components such as _environment embeddings_ that can easily be swapped to [solve new problems](https://github.com/ai4co/rl4co/blob/main/examples/3-creating-new-env-model.ipynb).
+### emoji \[type\] message
 
-![RL4CO Policy](https://github.com/ai4co/rl4co/assets/48984123/ca88f159-d0b3-459e-8fd9-89799be9d1b0)
+```
+🔥 [add] #1 add html cleansing code
+🔥 [add] #4 data preprocessing code
+🐛 [fix] #12 fix bugs
+🛠️ [git] #12 resolve merge conflict
+🛠️ [git] #12 .gitignore
+✨ [feat] #19 implement main logics (incomplete)
+📝 [docs] #24 update git files
+📝 [docs] #31 add TODO
+🎨 [style] #31 fix typo
+📌 [dev] #31 update dependencies
+🛠️ [git] #2 merge
+```
 
-## Getting started
-<a href="https://colab.research.google.com/github/ai4co/rl4co/blob/main/examples/1-quickstart.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+### type
 
-RL4CO is now available for installation on `pip`!
+```
+✨ feat : 새로운 기능 추가
+🔥 add : 기능은 아닌 코드 추가
+🐛 fix : 버그 수정
+📝 docs : 문서 수정
+🎨 style : 코드 포맷팅, 세미콜론 누락, 코드 리프랙터, 코드 변경이 없는 경우
+🛠️ git : 깃허브 관련
+📌 dev : 개발환경 (packages, requirements, 등등)
+```
+
+### message
+
+- 첫글자는 대문자로 시작
+- 필요한 경우 message 아래에 내용 첨부
+- type 다음에 #N 으로 이슈번호 붙이기
+
+```
+Ex
+🔥 [Feat] #34 Implement main logics (incomplete)
+
+TODO
+- vehicle_update 함수 수정 필요
+- request_time 변수 추가 필요
+- calculate_time unit test
+```
+
+### fix
+
+- `git commit --amend -m "바꿀 메시지"`
+- `git push --force`
+
+## Branch Naming Convention
+
+### Overall
+
+```
+📢작업 흐름📢
+
+1. 작업 하기 전에 무조건 이슈 올리기
+
+2. feature 브랜치 만들기
+   - 브랜치 컨벤션 : feat/#이슈번호
+
+3. feature 브랜치로 전환한 후 작업 진행하기
+
+4. 작업 끝나고 add, commit, push
+
+5. PR하기
+
+6. 머지하기
+   - 2명 이상의 승인을 받아야 머지 가능
+
+7. feature 브랜치 제거하기
+   - 원격 브랜치, 로컬 브랜치 제거
+```
+
+### type
+
+```
+main: 메인 브랜치
+feature: 기능 개발 브랜치
+hotfix: 긴급 수정 브랜치
+develop: 개발 브랜치
+```
+
+### name
+
+### example
+
+```
+feature#1/mindong/login
+hotfix#2/jeau/fix-social-login
+develop#3/joon/v0.1.12
+chore#4/mindong/update-readme
+chore#5/joon/style-change
+add#1/jeau/add-skeleton-code
+```
+
+### Issue naming convention
+
+- Emoji/Type/Identifier/Title
+
+```
+✨ feature: For new functionalities/features.
+🔥 add: 뭔가 디게 밑에 거 어떤 것도 아닌데 애매할 때
+🛠 chore: 기타 등등 (minor change)
+🌱 develop: 개발 브랜치 (버전 체킹용)
+🚑 hotfix: 핫픽스 브랜치
+🚧 spike: Research or investigative tasks.
+```
+
+- Example
+
+```
+[✨/feature/mindong] implement Login Feature
+[🌱/develop/jeau] v0.1.12
+[🚑/hotfix/joon] fix Login Bug
+```
+
+### When forgot to create branch
+
 ```bash
-pip install rl4co
+git stash
+# 현재 작업 내용을 stash라는 어떤 공간에 일단 저장함
+# stash 하면 갑자기 다 사라짐, 놀라지 말 것.
+
+git checkout -b new-branch-name
+# Ex. git checkout -b feature#1/cake/login
+# 새 브랜치를 만듦
+
+git stash apply
+# stash에 저장된 작업 내용을 불러옴
+# 이후 커밋 진행
+git add file1 file2
+git commit -m "commit message"
+# Ex. git commit -m "✨ [Add] Implement Login Feature"
+
+git checkout main
+# main으로 돌아옴
+
+git checkout -b another-new-branch-name
+# 다시 다른 브랜치를 만듦
+
+git stash apply
+git add file3 file4
+git commit -m "commit message"
+
+# ... 이런 식으로 진행
+
+git stash pop
+git push origin new-branch-name
+# Ex. git push origin feature#1/cake/login
+# 아니면, pull request를 날리고 merge하면 됨 (이게 더 낫쥬?)
+
+git branch -D another-new-branch-name
 ```
-
-To get started, we recommend checking out our [quickstart notebook](examples/1-quickstart.ipynb) or the [minimalistic example](#minimalistic-example) below.
-
-### Install from source
-This command installs the bleeding edge `main` version, useful for staying up-to-date with the latest developments - for instance, if a bug has been fixed since the last official release but a new release hasn’t been rolled out yet:
-
-```bash
-pip install -U git+https://github.com/ai4co/rl4co.git
-```
-
-### Local install and development
-If you want to develop RL4CO we recommend you to install it locally with `pip` in editable mode:
-
-```bash
-git clone https://github.com/ai4co/rl4co && cd rl4co
-pip install -e .
-```
-
-We recommend using a virtual environment such as `conda` to install `rl4co` locally.
-
-
-
-## Usage
-
-
-Train model with default configuration (AM on TSP environment):
-```bash
-python run.py
-```
-
-> [!TIP]
-> You may check out [this notebook](examples/advanced/1-hydra-config.ipynb) to get started with Hydra!
-
-<details>
-    <summary>Change experiment settings</summary>
-
-Train model with chosen experiment configuration from [configs/experiment/](configs/experiment/)
-```bash
-python run.py experiment=routing/am env=tsp env.num_loc=50 model.optimizer_kwargs.lr=2e-4
-```
-Here you may change the environment, e.g. with `env=cvrp` by command line or by modifying the corresponding experiment e.g. [configs/experiment/routing/am.yaml](configs/experiment/routing/am.yaml).
-
-</details>
-
-
-
-
-<details>
-    <summary>Disable logging</summary>
-
-```bash
-python run.py experiment=routing/am logger=none '~callbacks.learning_rate_monitor'
-```
-Note that `~` is used to disable a callback that would need a logger.
-
-</details>
-
-
-<details>
-    <summary>Create a sweep over hyperparameters (-m for multirun)</summary>
-
-```bash
-python run.py -m experiment=routing/am  model.optimizer.lr=1e-3,1e-4,1e-5
-```
-</details>
-
-
-
-### Minimalistic Example
-
-Here is a minimalistic example training the Attention Model with greedy rollout baseline on TSP in less than 30 lines of code:
-
-```python
-from rl4co.envs import TSPEnv
-from rl4co.models import AttentionModel
-from rl4co.utils import RL4COTrainer
-
-# Environment, Model, and Lightning Module
-env = TSPEnv(generator_params={'num_loc': 50, 'loc_distribution': 'uniform'})
-model = AttentionModel(env,
-                       baseline="rollout",
-                       train_data_size=100_000,
-                       test_data_size=10_000,
-                       optimizer_kwargs={'lr': 1e-4}
-                       )
-
-# Trainer
-trainer = RL4COTrainer(max_epochs=3)
-
-# Fit the model
-trainer.fit(model)
-
-# Test the model
-trainer.test(model)
-```
-
-Other examples can be found on the [documentation](https://rl4co.readthedocs.io/en/latest/)!
-
-
-### Testing
-
-Run tests with `pytest` from the root directory:
-
-```bash
-pytest tests
-```
-
-### Known Bugs
-
-
-#### Bugs installing PyTorch Geometric (PyG)
-
-Installing `PyG` via `Conda` seems to update Torch itself. We have found that this update introduces some bugs with `torchrl`. At this moment, we recommend installing `PyG` with `Pip`:
-```bash
-pip install torch_geometric
-```
-
-
-## Contributing
-
-Have a suggestion, request, or found a bug? Feel free to [open an issue](https://github.com/ai4co/rl4co/issues) or [submit a pull request](https://github.com/ai4co/rl4co/pulls).
-If you would like to contribute, please check out our contribution guidelines   [here](.github/CONTRIBUTING.md). We welcome and look forward to all contributions to RL4CO!
-
-We are also on [Slack](https://join.slack.com/t/rl4co/shared_invite/zt-1ytz2c1v4-0IkQ8NQH4TRXIX8PrRmDhQ) if you have any questions or would like to discuss RL4CO with us. We are open to collaborations and would love to hear from you 🚀
-
-### Contributors
-<a href="https://github.com/ai4co/rl4co/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ai4co/rl4co" />
-</a>
-
-## Citation
-If you find RL4CO valuable for your research or applied projects:
-
-```bibtex
-@inproceedings{berto2023rl4co,
-    title={{RL}4{CO}: a Unified Reinforcement Learning for Combinatorial Optimization Library},
-    author={Federico Berto and Chuanbo Hua and Junyoung Park and Minsu Kim and Hyeonah Kim and Jiwoo Son and Haeyeon Kim and Joungho Kim and Jinkyoo Park},
-    booktitle={NeurIPS 2023 Workshop: New Frontiers in Graph Learning},
-    year={2023},
-    url={https://openreview.net/forum?id=YXSJxi8dOV},
-    note={\url{https://github.com/ai4co/rl4co}}
-}
-```
-
-## Join us
-[![Slack](https://img.shields.io/badge/slack-chat-611f69.svg?logo=slack)](https://join.slack.com/t/rl4co/shared_invite/zt-1ytz2c1v4-0IkQ8NQH4TRXIX8PrRmDhQ)
-
-We invite you to join our AI4CO community, an open research group in Artificial Intelligence (AI) for Combinatorial Optimization (CO)!
-
-
-
-<div align="center">
-    <img src="https://raw.githubusercontent.com/ai4co/assets/main/svg/ai4co_animated_full.svg" alt="AI4CO Logo" style="width: 30%; height: auto;">
-</div>
-
-
